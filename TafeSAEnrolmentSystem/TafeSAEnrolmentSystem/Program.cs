@@ -1,4 +1,6 @@
-﻿using TafeSAEnrolmentSystem;
+﻿using System.Security.Cryptography;
+using TafeSAEnrolmentSystem;
+
 
 Person myPerson = new Person();
 Console.WriteLine(myPerson);
@@ -28,6 +30,7 @@ Console.WriteLine("myAddress Suburb: " + myAddress.Suburb);
 Console.WriteLine("myAddress Postcode: " + myAddress.Postcode);
 Console.WriteLine("myAddress State: " + myAddress.State);
 Student student1 = new Student(01, "IT", "18/02/2024");
+
 Person myPerson2 = new Person("Mike Smith", "mikesmith@outlook.com", "0423654895", myAddress);
 //Testing composition
 myPerson2.StudentID = 20;
@@ -54,10 +57,24 @@ Console.WriteLine("myEnrolment1 semester: " + myEnrolment1.Semester);
 
 Enrolment myEnrolment = new Enrolment("10/02/2025","B","1", mySubject);
 Console.WriteLine(myEnrolment);
-
-
-
-
-
+Student student2 = new Student(02, "ITT", "18/02/2024");
+// Testing == method true and false
+Console.WriteLine("student1 == student2 expected false: " + (student1 == student2));
+Console.WriteLine("student1 == student1 expected true: " + (student1 == student1));
+// Testing .Equals method true and false
+Console.WriteLine("student1.Equals(student2) expected false: " + student1.Equals(student2));
+student2 = student1;
+Console.WriteLine("student1.Equals(student2) expected true: " + student1.Equals(student2));
+student2 = null;
+//Testing for null
+Console.WriteLine("student1.Equals(student2) expected false: " + student1.Equals(student2));
 
 Console.ReadKey();
+
+
+
+
+
+
+
+

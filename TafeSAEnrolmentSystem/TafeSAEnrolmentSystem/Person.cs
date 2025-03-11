@@ -16,6 +16,7 @@ namespace TafeSAEnrolmentSystem
         //private string name;
         //private string email;
         //private string phoneNumber;
+
         public Address PersonAddress { get; set; }
         public string PersonName { get; set; }
 
